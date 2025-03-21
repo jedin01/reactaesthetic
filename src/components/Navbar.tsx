@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Home, ListChecks, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -17,12 +17,12 @@ const NavItem = ({ icon: Icon, label, isActive, onClick }: NavItemProps) => {
       whileTap={{ scale: 0.95 }}
       onClick={onClick}
       className={cn(
-        "nav-item",
+        "nav-item flex flex-col items-center gap-1",
         isActive && "nav-item-active"
       )}
     >
       <Icon className={cn("nav-icon h-6 w-6", isActive ? "text-primary" : "text-muted-foreground")} />
-      <span className={cn("nav-text", isActive ? "text-primary" : "text-muted-foreground")}>
+      <span className={cn("nav-text text-xs", isActive ? "text-primary" : "text-muted-foreground")}>
         {label}
       </span>
       {isActive && (
@@ -38,9 +38,12 @@ const NavItem = ({ icon: Icon, label, isActive, onClick }: NavItemProps) => {
   );
 };
 
-const Navbar = () => {
-  const [activeTab, setActiveTab] = useState('home');
+interface NavbarProps {
+  activeTab: string;
+  setActiveTab: (tab: string) => void;
+}
 
+const Navbar = ({ activeTab, setActiveTab }: NavbarProps) => {
   return (
     <motion.nav 
       className="fixed bottom-0 left-0 right-0 h-16 bg-background/80 backdrop-blur-lg border-t border-border px-2 flex justify-around items-center z-50"

@@ -69,7 +69,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="custom-navbar-observer">
+      <div className="pb-16">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -85,20 +85,8 @@ const Index = () => {
         </AnimatePresence>
       </div>
       
-      <CustomNavbar activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
     </div>
-  );
-};
-
-const CustomNavbar = ({ activeTab, setActiveTab }) => {
-  const navItems = [
-    { id: 'home', icon: 'Home', label: 'Home' },
-    { id: 'summaries', icon: 'ListChecks', label: 'Summaries' },
-    { id: 'account', icon: 'User', label: 'Account' }
-  ];
-
-  return (
-    <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
   );
 };
 
