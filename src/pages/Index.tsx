@@ -60,8 +60,8 @@ const Index = () => {
               className="h-8 w-8 bg-primary rounded-full"
             />
           </div>
-          <h1 className="text-2xl font-bold">Loading</h1>
-          <p className="text-muted-foreground">Preparing your experience...</p>
+          <h1 className="text-2xl font-bold">Studyable</h1>
+          <p className="text-muted-foreground">Loading your study assistant...</p>
         </motion.div>
       </div>
     );

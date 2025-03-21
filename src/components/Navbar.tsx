@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Home, ListChecks, User } from 'lucide-react';
+import { Home, BookText, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 
@@ -63,8 +63,8 @@ const Navbar = ({ activeTab, setActiveTab }: NavbarProps) => {
         onClick={() => setActiveTab('home')}
       />
       <NavItem
-        icon={ListChecks}
-        label="Summaries"
+        icon={BookText}
+        label="Notes"
         isActive={activeTab === 'summaries'}
         onClick={() => setActiveTab('summaries')}
       />
